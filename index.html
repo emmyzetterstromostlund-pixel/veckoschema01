@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veckoschema - EE24 - Sveriges styre</title>
+    <!-- Ladda in Google Font (EB Garamond) -->
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Ladda in Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Anpassad CSS för smidigare övergångar */
+        .lesson-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        .lesson-details.active {
+            max-height: 500px; /* Tillräckligt stort för att rymma innehållet, anpassa vid behov */
+            opacity: 1;
+            padding-top: 1rem; /* p-4 */
+            padding-bottom: 1rem; /* p-4 */
+        }
+        /* Grundtypsnitt för body */
+        body {
+            font-family: 'EB Garamond', serif;
+        }
+    </style>
+</head>
+<body class="bg-amber-100 min-h-screen text-black flex items-center justify-center py-10">
+
+    <div class="container mx-auto px-4 max-w-2xl">
+        <h1 class="text-2xl font-normal text-center text-black mb-10 leading-tight">
+            Veckoschema - EE24 - Sveriges styre
+        </h1>
+
+        <div class="bg-amber-50 shadow-2xl rounded-3xl overflow-hidden border border-gray-200">
+            <ul class="divide-y divide-gray-200">
+                <!-- Loopar för att generera veckor -->
+                <script>
+                    // Generera veckor från vecka 41 till vecka 51
+                    for (let i = 41; i <= 51; i++) {
+                        let content = '';
+                        switch(i) {
+                            case 41:
+                                content = `
+                                    <p class="mb-2"><strong>Måndag:</strong></p>
+                                    <p class="mb-2"><em>Tema:</em> Introduktion till nytt delmoment + Hur Sverige styrs - grundlagar</p>
+                                    <p class="mb-2"><em>Mål:</em> Att förstå varför grundlagarna är viktiga och vad de betyder för hur Sverige styrs.</p>
+                                    <p class="mb-2"><strong>Torsdag:</strong></p>
+                                    <p class="mb-2"><em>Tema:</em> Hur Sveriges styrs - repetition & överblick</p>
+                                    <p class="mb-0"><em>Mål:</em> Att repetera och få en överblick över hur Sverige styrs och hur det hänger ihop med demokratin.</p>
+                                `;
+                                break;
+                            case 42:
+                            case 43:
+                                content = `
+                                    <p class="mb-0"><strong><em>Praktik</em></strong></p>
+                                `;
+                                break;
+                            case 44:
+                                content = `
+                                    <p class="mb-0"><strong><em>Höstlov</em></strong></p>
+                                `;
+                                break;
+                            case 45:
+                                content = `
+                                    <p class="mb-2"><strong>Måndag:</strong></p>
+                                    <p class="mb-2"><em>Tema:</em> Politiska ideologier (socialism, liberalism, konservatism) – introduktion</p>
+                                    <p class="mb-2"><em>Mål:</em> Förstå vad en politisk ideologi är och känna till grunderna i socialism, liberalism och konservatism.</p>
+                                    <p class="mb-2"><strong>Torsdag:</strong></p>
+                                    <p class="mb-2"><em>Tema:</em> Politiska ideologier – fortsättning</p>
+                                    <p class="mb-0"><em>Mål:</em> Känna igen skillnader och likheter mellan de tre ideologierna och hur de påverkar samhället.</p>
+                                `;
+                                break;
+                            case 46:
+                                content = `
+                                    <p class="mb-2"><strong>Måndag:</strong></p>
+                                    <p class="mb-2"><em>Tema:</em> Repetition – ideologier, riksdagspartiernas positioner, partipolitik</p>
+                                    <p class="mb-2"><em>Mål:</em> Kunna koppla de svenska riksdagspartierna till olika ideologier.</p>
+                                    <p class="mb-2"><strong>Torsdag:</strong></p>
+                                    <p class="mb-2"><em>Tema:</em> Intro till gruppuppgift + arbete i grupper med infografik</p>
+                                    <p class="mb-0"><em>Mål:</em> Lära sig mer om ett parti och dess ideologiska grund genom att börja skapa en infografik i grupp.</p>
+                                `;
+                                break;
+                            case 47:
+                                content = `
+                                    <p class="mb-0">Utvecklingssamtal – inga lektioner</p>
+                                `;
+                                break;
+                            case 48:
+                                content = `
+                                    <p class="mb-2"><strong>Måndag:</strong></p>
+                                    <p class="mb-2"><em>Tema:</em> Fortsätta arbeta i grupper med infografik</p>
+                                    <p class="mb-2"><em>Mål:</em> Fördjupa sina kunskaper om ett partis ideologiska grund och presentera det tydligt i en infografik.</p>
+                                    <p class="mb-2"><strong>Torsdag:</strong></p>
+                                    <p class="mb-2"><em>Tema:</em> Redovisning (muntligt i grupp) av infografik + diskussion</p>
+                                    <p class="mb-0"><em>Mål:</em> Träna på att presentera och diskutera hur ideologi och partipolitik hänger ihop.</p>
+                                `;
+                                break;
+                            case 49:
+                                content = `
+                                    <p class="mb-2"><strong>Måndag:</strong></p>
+                                    <p class="mb-2"><em>Tema:</em> Repetition – hur Sverige styrs: grundlagar, maktens organisation, de tre ideologierna</p>
+                                    <p class="mb-2"><em>Mål:</em> Få en överblick över hur Sverige styrs och hur ideologierna påverkar samhällets organisering.</p>
+                                    <p class="mb-2"><strong>Torsdag:</strong></p>
+                                    <p class="mb-2"><em>Tema:</em> Repetition – ideologier och partipolitik</p>
+                                    <p class="mb-0"><em>Mål:</em> Sammanfatta hur ideologierna syns i svensk partipolitik.</p>
+                                `;
+                                break;
+                            case 50:
+                                content = `
+                                    <p class="mb-0">Prov i Trelson (skriftligt) – båda dagarna</p>
+                                `;
+                                break;
+                            case 51:
+                                content = `
+                                    <p class="mb-0">Avslut & betygssamtal</p>
+                                `;
+                                break;
+                        }
+
+                        document.write(`
+                            <li>
+                                <div class="week-header flex items-center justify-between p-6 cursor-pointer hover:bg-stone-50 transition duration-200 ease-in-out">
+                                    <span class="text-black">✦ Vecka ${i}</span>
+                                    <svg class="w-6 h-6 text-black transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </div>
+                                <div class="lesson-details bg-amber-50 text-black border-t border-gray-100 text-sm">
+                                    <div class="px-6 py-4">
+                                        ${content}
+                                    </div>
+                                </div>
+                            </li>
+                        `);
+                    }
+                </script>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript för att hantera expandering/hopfällning
+        document.addEventListener('DOMContentLoaded', () => {
+            const weekHeaders = document.querySelectorAll('.week-header');
+
+            weekHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    // Hitta nästa syskonelement, som är lesson-details div:en
+                    const details = header.nextElementSibling;
+                    // Hitta SVG-ikonen
+                    const icon = header.querySelector('svg');
+
+                    // Växla 'active' klassen på details-div:en
+                    details.classList.toggle('active');
+
+                    // Rotera pilikonen
+                    icon.classList.toggle('rotate-180');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
